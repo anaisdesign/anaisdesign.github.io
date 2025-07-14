@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Color Palette | Anaïs Fotsing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/" class="logo">Anaïs Fotsing</a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      ☰
+    </button>
+
+  <div class="nav-links">
+    <a href="/projects/">PROJECTS</a>
+    <a href="/sketchbook/">SKETCHBOOK</a>
+    <a href="/about/">ABOUT ME</a>
+  </div>
+</nav>
+
+  <main class="container">
+    <h1>My Color Palette</h1>
+<p>A minimal website that teaches you about seasonal colors through interactive lessons. Built with HTML/CSS/JS/Flask and user research insights.</p>
+
+  </main>
+</body>
+</html>
+
+<script>
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".site-nav");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("open");
+  });
+</script>
