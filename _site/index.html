@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home | Anaïs Fotsing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/" class="logo">Anaïs Fotsing</a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      ☰
+    </button>
+
+  <div class="nav-links">
+    <a href="/projects/">PROJECTS</a>
+    <a href="/sketchbook/">SKETCHBOOK</a>
+    <a href="/about/">ABOUT ME</a>
+  </div>
+</nav>
+
+  <main class="container">
+    <h1>Hi, my name is Anaïs!</h1>
+<p>I am an aspiring [designer/developer/creative thinker] with a love for [design systems, user psychology, animation, etc.].</p>
+<p>I enjoy building clean and thoughtful experiences that solve real problems and make people feel good using digital products. When I'm not designing, I'm probably curating playlists, people-watching, or experimenting in Figma.</p>
+<p>👉 Check out <a href="/projects/">My Projects</a>!</p>
+
+  </main>
+</body>
+</html>
+
+<script>
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".site-nav");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("open");
+  });
+</script>
