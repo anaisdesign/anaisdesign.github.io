@@ -1,40 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Home | Anaïs Fotsing</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-  <nav class="site-nav">
-    <a href="/" class="logo">Anaïs Fotsing</a>
-    <button class="nav-toggle" aria-label="Toggle menu">
-      ☰
-    </button>
+---
+layout: layouts/base.njk
+title: Home
+description: "UX/Product Designer and Computer Science student at Barnard College, creating inclusive digital experiences for beauty, lifestyle, and editorial platforms."
+---
 
-  <div class="nav-links">
-    <a href="/projects/">PROJECTS</a>
-    <a href="/sketchbook/">SKETCHBOOK</a>
-    <a href="/about/">ABOUT ME</a>
-  </div>
-</nav>
+<section id="home" class="hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1>Designing with Purpose & Impact</h1>
+            <p>{{ site.description }}</p>
+            <a href="#projects" class="cta-button">View My Work</a>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card">
+                <div class="card-content">
+                    <div class="card-line"></div>
+                    <div class="card-line"></div>
+                    <div class="card-line"></div>
+                    <div class="card-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-  <main class="container">
-    <h1>Hi, my name is Anaïs!</h1>
-<p>I am an aspiring [designer/developer/creative thinker] with a love for [design systems, user psychology, animation, etc.].</p>
-<p>I enjoy building clean and thoughtful experiences that solve real problems and make people feel good using digital products. When I'm not designing, I'm probably curating playlists, people-watching, or experimenting in Figma.</p>
-<p>👉 Check out <a href="/projects/">My Projects</a>!</p>
+<section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title fade-in">About Me</h2>
+        <div class="about-content">
+            <div class="about-image fade-in">👋</div>
+            <div class="about-text fade-in">
+                <h3>Hello, I'm Anaïs!</h3>
+                <p>I'm a UX/Product Designer and Computer Science student at Barnard College, Columbia University. I'm passionate about creating user-centered digital experiences that prioritize accessibility and inclusivity.</p>
+                <p>I enjoy building clean and thoughtful experiences that solve real problems and make people feel good using digital products. When I'm not designing, I'm probably curating playlists, people-watching, or experimenting in Figma</p>
+                <div class="skills">
+                    {% for skill in skills.design %}
+                    <span class="skill-tag">{{ skill }}</span>
+                    {% endfor %}
+                    {% for skill in skills.technical %}
+                    <span class="skill-tag">{{ skill }}</span>
+                    {% endfor %}
+                    {% for skill in skills.core %}
+                    <span class="skill-tag">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-  </main>
-</body>
-</html>
+<section id="projects" class="projects">
+    <div class="container">
+        <h2 class="section-title fade-in">Featured Projects</h2>
+        <div class="projects-grid">
+            {% for project in collections.projects %}
+            <div class="project-card fade-in">
+                <div class="project-image">{{ project.data.emoji or "🎨" }}</div>
+                <div class="project-content">
+                    <h3 class="project-title">{{ project.data.title }}</h3>
+                    <p class="project-description">{{ project.data.description }}</p>
+                    <div class="project-tags">
+                        {% for tag in project.data.tags %}
+                        {% if tag != "project" %}
+                        <span class="project-tag">{{ tag }}</span>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% if project.data.link %}
+                    <a href="{{ project.data.link }}" class="project-link" target="_blank">View Project →</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
-<script>
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".site-nav");
-
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("open");
-  });
-</script>
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="contact-content fade-in">
+            <h2>Let's Work Together</h2>
+            <p>Ready to create something amazing? I'd love to hear about your project and discuss how we can bring your vision to life.</p>
+            <div class="contact-links">
+                <a href="mailto:{{ site.email }}" class="contact-link">Email Me</a>
+                <a href="{{ site.url }}" class="contact-link">Portfolio Site</a>
+                <a href="tel:{{ site.phone }}" class="contact-link">Call Me</a>
+                <a href="{{ site.linkedin }}" class="contact-link" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</section>
