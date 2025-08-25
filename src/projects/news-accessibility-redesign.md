@@ -3,7 +3,7 @@ title: "News Article Accessibility Redesign"
 date: 2025-08-22
 tags: ["Accessibility", "UX Design", "Figma"]
 description: "Reimagined a news article UI to improve accessibility, readability, and ad integration."
-layout: "project"
+layout: layouts/base.njk
 ---
 
 ## Project Overview  

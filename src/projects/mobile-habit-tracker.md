@@ -3,7 +3,7 @@ title: "Mobile Habit Tracker Prototype"
 date: 2025-08-22
 tags: ["Product Design", "Mobile", "Figma"]
 description: "Designed a simple, gamified mobile habit tracker prototype focused on ease of use and engagement."
-layout: "project"
+layout: layouts/base.njk
 ---
 
 ## Project Overview  
